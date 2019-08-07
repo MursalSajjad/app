@@ -1,0 +1,24 @@
+
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <app-date></app-date>
+  <button (click)="show">Show</button><br><br>
+  <input type ="text" [(ngModel)] = "inputText"><br><br>
+{{inputText}}
+<br>
+<div *ngIf = "courses.length > 0; else noCourses">
+  Welcome to Courses
+</div>
+<ng-template #noCourses>
+  No Courses Yet
+</ng-template>
+<ul>
+<li *ngFor ="let datas of data;index as i">
+  {{i}}:  
+  {{ datas.id }}: 
+  {{ datas.name }}
+</li>
+</ul>
+
+<app-view-component></app-view-component>
